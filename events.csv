@@ -1,0 +1,6 @@
+name,description,icon,display_order,is_active
+Corporate Event,Corporate meetings and conferences,fas fa-briefcase,1,True
+Concert / Festival,Live music events,fas fa-music,2,True
+Wedding / Private Party,Weddings and private celebrations,fas fa-heart,3,True
+Conference / Seminar,Professional conferences,fas fa-chalkboard-user,4,True
+Product Launch,New product launches,fas fa-rocket,5,True
