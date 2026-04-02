@@ -154,3 +154,21 @@ class QuoteComment(models.Model):
     def __str__(self):
         return f"Comment on {self.quote.full_name} - {self.created_at.strftime('%Y-%m-%d')}"
 
+
+class RecentWork(models.Model):
+    """
+    Model to store recent work/projects for the homepage gallery
+    """
+    title = models.CharField(max_length=200, verbose_name="Project Title")
+    description = models.TextField(blank=True, verbose_name="Project Description")
+    image = models.ImageField(upload_to='recent_work/', blank=True, null=True, verbose_name="Project Image")
+    event_type = models.ForeignKey(EventType, on_delete=models.SET_NULL, null=True, blank=True, related_name='recent_works', verbose_name="Event Type")
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'Recent Work'
+        verbose_name_plural = 'Recent Works'
+    
+    def __str__(self):
+        return self.title

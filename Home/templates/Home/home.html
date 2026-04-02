@@ -27,6 +27,64 @@
       overflow-x: hidden;
     }
 
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      animation: pulse 2s infinite;
+    }
+
+    .whatsapp-float a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: 50%;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .whatsapp-float a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-float i {
+      font-size: 32px;
+      color: white;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+      }
+      .whatsapp-float a {
+        width: 50px;
+        height: 50px;
+      }
+      .whatsapp-float i {
+        font-size: 28px;
+      }
+    }
+
     /* Top Bar - Hide on mobile */
     .top-bar {
       background: linear-gradient(135deg, #0a0c15 0%, #0f1220 100%);
@@ -64,7 +122,7 @@
     }
 
     .top-bar-contact a:hover {
-      color: #7b4eff;
+      color: #4e7dff;
     }
 
     .top-bar-social {
@@ -79,7 +137,7 @@
     }
 
     .top-bar-social a:hover {
-      color: #7b4eff;
+      color: #4e7dff;
       transform: translateY(-2px);
     }
 
@@ -128,7 +186,6 @@
     .logo-img {
       height: 35px;
       width: auto;
-      border-radius: 50%;
     }
 
     @media (min-width: 768px) {
@@ -154,7 +211,7 @@
     }
 
     .logo span {
-      color: #9b83ff;
+      color: #4e7dff;
     }
 
     .nav-links {
@@ -180,7 +237,7 @@
     }
 
     .nav-links a:hover, .nav-links a.active {
-      border-bottom-color: #7b4eff;
+      border-bottom-color: #4e7dff;
       color: white;
     }
 
@@ -191,7 +248,7 @@
     @media (min-width: 992px) {
       .header-cta {
         display: block;
-        background: #7b4eff;
+        background: #4e7dff;
         color: white;
         border: none;
         padding: 0.5rem 1.5rem;
@@ -336,7 +393,7 @@
       font-size: clamp(0.95rem, 3vw, 1.2rem);
       color: #cbd5e1;
       margin-bottom: 1.8rem;
-      border-left: 3px solid #7b4eff;
+      border-left: 3px solid #4e7dff;
       padding-left: 1rem;
     }
 
@@ -368,7 +425,7 @@
     }
 
     .carousel-dot.active {
-      background: #7b4eff;
+      background: #4e7dff;
       transform: scale(1.2);
     }
 
@@ -399,7 +456,7 @@
     }
 
     .carousel-arrow:hover {
-      background: #7b4eff;
+      background: #4e7dff;
     }
 
     .carousel-arrow.prev { left: 1rem; }
@@ -442,7 +499,7 @@
     }
 
     .btn-primary {
-      background: #7b4eff;
+      background: #4e7dff;
       color: white;
     }
 
@@ -457,7 +514,7 @@
     }
 
     .btn-outline:hover {
-      border-color: #7b4eff;
+      border-color: #4e7dff;
       background: rgba(123,78,255,0.1);
     }
 
@@ -539,13 +596,13 @@
     }
 
     .service-card:hover {
-      border-color: #7b4eff;
+      border-color: #4e7dff;
       transform: translateY(-5px);
     }
 
     .service-card i {
       font-size: 2rem;
-      color: #9a83ff;
+      color: #2b71ff;
       margin-bottom: 0.8rem;
     }
 
@@ -613,12 +670,12 @@
     }
 
     .why-list i {
-      color: #7b4eff;
+      color: #4e7dff;
       font-size: 1.1rem;
       min-width: 1.5rem;
     }
 
-    /* Gallery - Responsive */
+    /* Gallery - Enhanced with more images */
     .gallery {
       display: grid;
       grid-template-columns: 1fr;
@@ -634,8 +691,14 @@
 
     @media (min-width: 768px) {
       .gallery {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .gallery {
+        grid-template-columns: repeat(4, 1fr);
       }
     }
 
@@ -719,7 +782,7 @@
     .testimonial-avatar {
       width: 60px;
       height: 60px;
-      background: linear-gradient(135deg, #7b4eff, #b5a2ff);
+      background: linear-gradient(135deg, #4e7dff, #b5a2ff);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -759,7 +822,7 @@
 
     .testimonial-role {
       font-size: 0.8rem;
-      color: #7b4eff;
+      color: #4e7dff;
     }
 
     .testimonial-rating {
@@ -806,7 +869,7 @@
     }
 
     .step:hover {
-      border-color: #7b4eff;
+      border-color: #4e7dff;
       transform: translateY(-3px);
     }
 
@@ -968,7 +1031,7 @@
     .submit-btn {
       width: 100%;
       padding: 0.8rem;
-      background: #7b4eff;
+      background: #4e7dff;
       color: white;
       border: none;
       border-radius: 60px;
@@ -1051,7 +1114,7 @@
     }
 
     .footer-social a:hover {
-      color: #7b4eff;
+      color: #4e7dff;
     }
 
     .footer h5 {
@@ -1095,7 +1158,7 @@
     }
 
     .powered span {
-      color: #b7a4ff;
+      color: #2b71ff;
       font-weight: 600;
     }
 
@@ -1113,13 +1176,20 @@
 </head>
 <body>
 
+  <!-- Floating WhatsApp Button -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/254789654321?text=Hello%20BluePrint%20AV%2C%20I'm%20interested%20in%20your%20audio%20visual%20services.%20Can%20you%20help%20me%20plan%20my%20event%3F" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
   <!-- Top Bar - Hidden on mobile -->
   <div class="top-bar">
     <div class="top-bar-container">
       <div class="top-bar-contact">
-        <a href="tel:+254700123456"><i class="fas fa-phone-alt"></i> +254 700 123 456</a>
-        <a href="mailto:hello@blueprintav.ke"><i class="fas fa-envelope"></i> hello@blueprintav.ke</a>
-        <a href="https://wa.me/254789654321"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="tel:+254700123456"><i class="fas fa-phone-alt"></i> +254 721 595434</a>
+        <a href="mailto:support@blueprintaudiovisualltd.co.ke"><i class="fas fa-envelope"></i> support@blueprintaudiovisualltd.co.ke</a>
+        <a href="https://wa.me/254789654321" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         <span><i class="fas fa-map-marker-alt"></i> Westlands, Nairobi</span>
       </div>
       <div class="top-bar-social">
@@ -1225,7 +1295,7 @@
     </div>
   </section>
 
-  <!-- Portfolio Gallery -->
+  <!-- Portfolio Gallery - Enhanced with more images -->
   <section id="portfolio">
     <div class="container">
       <h2 class="section-title" data-aos="fade-right">Recent Work</h2>
@@ -1235,6 +1305,10 @@
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="{% static 'images/led-screens.jpg' %}" alt="LED Screens"><div class="gallery-caption">LED Wall Installation</div></div>
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="{% static 'images/crowd-shot.jpg' %}" alt="Crowd Shot"><div class="gallery-caption">Festival Crowd Experience</div></div>
         <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="{% static 'images/lighting-effects.jpg' %}" alt="Lighting Effects"><div class="gallery-caption">Dynamic Lighting Design</div></div>
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="400"><img src="{% static 'images/corporate-event.jpg' %}" alt="Corporate Event"><div class="gallery-caption">Corporate Conference Setup</div></div>
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="500"><img src="{% static 'images/wedding-setup.jpg' %}" alt="Wedding Setup"><div class="gallery-caption">Wedding Reception Lighting</div></div>
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="600"><img src="{% static 'images/dj-performance.jpg' %}" alt="DJ Performance"><div class="gallery-caption">DJ & Club Experience</div></div>
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="700"><img src="{% static 'images/outdoor-event.jpg' %}" alt="Outdoor Event"><div class="gallery-caption">Outdoor Festival Production</div></div>
       </div>
     </div>
   </section>
@@ -1248,6 +1322,7 @@
           <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-avatar"><i class="fas fa-user-tie"></i></div><div class="testimonial-text">"BluePrint AV transformed our corporate gala into an unforgettable experience. The sound quality was crystal clear and the lighting design was absolutely breathtaking."</div><div class="testimonial-name">Sarah Mwangi</div><div class="testimonial-role">Event Manager, Safaricom</div><div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
           <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-avatar"><i class="fas fa-music"></i></div><div class="testimonial-text">"Exceptional team! They handled our music festival seamlessly. The stage setup and sound systems were world-class. Highly recommend!"</div><div class="testimonial-name">John Kamau</div><div class="testimonial-role">Festival Director</div><div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
           <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-avatar"><i class="fas fa-heart"></i></div><div class="testimonial-text">"Our wedding was perfect thanks to BluePrint AV! The lighting created a romantic atmosphere and the DJ kept everyone dancing all night."</div><div class="testimonial-name">Grace & Michael</div><div class="testimonial-role">Happy Couple</div><div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
+          <div class="swiper-slide"><div class="testimonial-card"><div class="testimonial-avatar"><i class="fas fa-chalkboard-user"></i></div><div class="testimonial-text">"The technical support was flawless. BluePrint AV handled our international conference with multiple breakout sessions perfectly."</div><div class="testimonial-name">Dr. James Wainaina</div><div class="testimonial-role">Conference Organizer</div><div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div>
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -1276,7 +1351,7 @@
     <div class="container">
       <div class="cta-with-form" data-aos="zoom-in">
         <div class="cta-grid">
-          <div class="cta-left"><h2>Let's Build Your Next Event Experience</h2><p style="color: #b0b8d0;">Reach out for a free consultation or instant quote.</p><div class="cta-contacts"><div class="contact-item"><i class="fas fa-phone-alt"></i> +254 700 123 456</div><div class="contact-item"><i class="fas fa-envelope"></i> hello@blueprintav.ke</div><div class="contact-item"><i class="fab fa-whatsapp"></i> +254 789 654 321</div><div class="contact-item"><i class="fas fa-map-marker-alt"></i> Westlands, Nairobi</div></div></div>
+          <div class="cta-left"><h2>Let's Build Your Next Event Experience</h2><p style="color: #b0b8d0;">Reach out for a free consultation or instant quote.</p><div class="cta-contacts"><div class="contact-item"><i class="fas fa-phone-alt"></i> +254 721 595434</div><div class="contact-item"><i class="fas fa-envelope"></i> support@blueprintaudiovisualltd.co.ke</div><div class="contact-item"><i class="fab fa-whatsapp"></i> +254 789 654 321</div><div class="contact-item"><i class="fas fa-map-marker-alt"></i> Westlands, Nairobi</div></div></div>
           <div class="quote-form"><h3>Request a Quote</h3>{% if messages %}{% for message in messages %}<div class="alert alert-success">{{ message }}</div>{% endfor %}{% endif %}<form method="POST" action="{% url 'submit_quote' %}">{% csrf_token %}<div class="form-group">{{ form.full_name }}</div><div class="form-group">{{ form.email }}</div><div class="form-group">{{ form.phone }}</div><div class="form-group">{{ form.event_type }}</div><div class="form-group">{{ form.message }}</div><button type="submit" class="submit-btn">Get a Quote <i class="fas fa-paper-plane"></i></button></form></div>
         </div>
       </div>
@@ -1286,15 +1361,15 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid"><div><div class="footer-logo">BluePrint<span style="color:#7b4eff;">AV</span></div><p>Sound, light & visual experience<br>Nairobi · worldwide</p><div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div><div><h5>Quick Services</h5><ul class="footer-links"><li><a href="#">Audio Systems</a></li><li><a href="#">LED Walls</a></li><li><a href="#">Stage Production</a></li><li><a href="#">DJ Entertainment</a></li></ul></div><div><h5>Location</h5><ul class="footer-links"><li><i class="fas fa-map-pin"></i> Westlands, Nairobi</li><li><i class="fas fa-clock"></i> 24/7 Support</li><li><i class="fas fa-globe"></i> Available Nationwide</li></ul></div></div>
-      <div class="powered">powered by <a href="https://blackcodelab.com" target="_blank" style="text-decoration: none; color: #7b4eff;"><span>BLACKCODELABS</span></a> · BluePrint Audio Visual</div>
+      <div class="footer-grid"><div><div class="footer-logo">BluePrint<span style="color:#4e7dff;">AV</span></div><p>Sound, light & visual experience<br>Nairobi · worldwide</p><div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div><div><h5>Quick Services</h5><ul class="footer-links"><li><a href="#">Audio Systems</a></li><li><a href="#">LED Walls</a></li><li><a href="#">Stage Production</a></li><li><a href="#">DJ Entertainment</a></li></ul></div><div><h5>Location</h5><ul class="footer-links"><li><i class="fas fa-map-pin"></i> Westlands, Nairobi</li><li><i class="fas fa-clock"></i> 24/7 Support</li><li><i class="fas fa-globe"></i> Available Nationwide</li></ul></div></div>
+      <div class="powered">powered by <span>BLACKCODELABS</span> · BluePrint Audio Visual</div>
     </div>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true, offset: 100, disable: window.innerWidth < 768 ? false : false });
+    AOS.init({ duration: 800, once: true, offset: 100 });
 
     function toggleMobileMenu() {
       document.getElementById('mobileNav').classList.toggle('show');

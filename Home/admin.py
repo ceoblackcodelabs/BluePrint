@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from django.utils import timezone
-from .models import EventType, Quote, QuoteComment
+from .models import EventType, Quote, QuoteComment, RecentWork
 
 
 @admin.register(EventType)
@@ -207,6 +207,12 @@ class QuoteCommentAdmin(admin.ModelAdmin):
         return obj.comment[:100] + '...' if len(obj.comment) > 100 else obj.comment
     comment_preview.short_description = 'Comment'
 
+@admin.register(RecentWork)
+class RecentWorkAdmin(admin.ModelAdmin):
+    list_display = ['title', 'event_type', 'created_at']
+    list_filter = ['event_type', 'created_at']
+    search_fields = ['title', 'description']
+    readonly_fields = ['created_at']
 
 # Customize admin site
 admin.site.site_header = "BluePrint AV Administration"
