@@ -12,6 +12,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Swiper for Testimonials Carousel -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">  
   <style>
     * {
       margin: 0;
@@ -951,6 +952,7 @@
       flex-direction: column;
       gap: 0.8rem;
       margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .contact-item {
@@ -969,6 +971,35 @@
         width: fit-content;
         padding: 0.7rem 1.2rem;
         font-size: 0.9rem;
+      }
+    }
+
+    /* Map Styles */
+    .location-map {
+      margin-top: 1.5rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid #2f2f4a;
+    }
+
+    .location-map iframe {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      display: block;
+    }
+
+    .map-caption {
+      font-size: 0.75rem;
+      color: #6b728b;
+      text-align: center;
+      padding: 0.5rem;
+      background: #1a1e2c;
+    }
+
+    @media (min-width: 768px) {
+      .location-map iframe {
+        height: 280px;
       }
     }
 
@@ -1178,7 +1209,7 @@
 
   <!-- Floating WhatsApp Button -->
   <div class="whatsapp-float">
-    <a href="https://wa.me/254789654321?text=Hello%20BluePrint%20AV%2C%20I'm%20interested%20in%20your%20audio%20visual%20services.%20Can%20you%20help%20me%20plan%20my%20event%3F" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/254721595434?text=Hello%20BluePrint%20AV%2C%20I'm%20interested%20in%20your%20audio%20visual%20services.%20Can%20you%20help%20me%20plan%20my%20event%3F" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
@@ -1187,14 +1218,13 @@
   <div class="top-bar">
     <div class="top-bar-container">
       <div class="top-bar-contact">
-        <a href="tel:+254700123456"><i class="fas fa-phone-alt"></i> +254 721 595434</a>
+        <a href="tel:+254721595434"><i class="fas fa-phone-alt"></i> +254 721 595434</a>
         <a href="mailto:support@blueprintaudiovisualltd.co.ke"><i class="fas fa-envelope"></i> support@blueprintaudiovisualltd.co.ke</a>
-        <a href="https://wa.me/254789654321" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <span><i class="fas fa-map-marker-alt"></i> Westlands, Nairobi</span>
+        <a href="https://wa.me/254721595434" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <span><i class="fas fa-map-marker-alt"></i> Ngara, Nairobi</span>
       </div>
       <div class="top-bar-social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/blue_print_audio_visual?igsh=MjBrZ2hxNGhnejJm" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-x-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin-in"></i></a>
       </div>
@@ -1346,13 +1376,53 @@
     </div>
   </section>
 
-  <!-- Contact & Quote Form -->
+  <!-- Contact & Quote Form with Map -->
   <section id="contact">
     <div class="container">
       <div class="cta-with-form" data-aos="zoom-in">
         <div class="cta-grid">
-          <div class="cta-left"><h2>Let's Build Your Next Event Experience</h2><p style="color: #b0b8d0;">Reach out for a free consultation or instant quote.</p><div class="cta-contacts"><div class="contact-item"><i class="fas fa-phone-alt"></i> +254 721 595434</div><div class="contact-item"><i class="fas fa-envelope"></i> support@blueprintaudiovisualltd.co.ke</div><div class="contact-item"><i class="fab fa-whatsapp"></i> +254 789 654 321</div><div class="contact-item"><i class="fas fa-map-marker-alt"></i> Westlands, Nairobi</div></div></div>
-          <div class="quote-form"><h3>Request a Quote</h3>{% if messages %}{% for message in messages %}<div class="alert alert-success">{{ message }}</div>{% endfor %}{% endif %}<form method="POST" action="{% url 'submit_quote' %}">{% csrf_token %}<div class="form-group">{{ form.full_name }}</div><div class="form-group">{{ form.email }}</div><div class="form-group">{{ form.phone }}</div><div class="form-group">{{ form.event_type }}</div><div class="form-group">{{ form.message }}</div><button type="submit" class="submit-btn">Get a Quote <i class="fas fa-paper-plane"></i></button></form></div>
+          <div class="cta-left">
+            <h2>Let's Build Your Next Event Experience</h2>
+            <p style="color: #b0b8d0;">Reach out for a free consultation or instant quote.</p>
+            <div class="cta-contacts">
+              <div class="contact-item"><i class="fas fa-phone-alt"></i> +254 721 595434</div>
+              <div class="contact-item"><i class="fas fa-envelope"></i> support@blueprintaudiovisualltd.co.ke</div>
+              <div class="contact-item"><i class="fab fa-whatsapp"></i> +254 721 595434</div>
+              <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Ngara, Nairobi</div>
+            </div>
+            <!-- Google Maps Embed for Ngara, Nairobi -->
+            <div class="location-map">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.632790712357!2d36.8275836!3d-1.2760809999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f170c7f0e3b3b%3A0x8f8b8b8b8b8b8b8b!2sNgara%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" 
+                width="100%" 
+                height="250" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <div class="map-caption">
+                <i class="fas fa-location-dot"></i> BluePrint AV - Ngara, Nairobi
+              </div>
+            </div>
+          </div>
+          <div class="quote-form">
+            <h3>Request a Quote</h3>
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-success">{{ message }}</div>
+              {% endfor %}
+            {% endif %}
+            <form method="POST" action="{% url 'submit_quote' %}">
+              {% csrf_token %}
+              <div class="form-group">{{ form.full_name }}</div>
+              <div class="form-group">{{ form.email }}</div>
+              <div class="form-group">{{ form.phone }}</div>
+              <div class="form-group">{{ form.event_type }}</div>
+              <div class="form-group">{{ form.message }}</div>
+              <button type="submit" class="submit-btn">Get a Quote <i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -1361,8 +1431,38 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid"><div><div class="footer-logo">BluePrint<span style="color:#4e7dff;">AV</span></div><p>Sound, light & visual experience<br>Nairobi · worldwide</p><div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div><div><h5>Quick Services</h5><ul class="footer-links"><li><a href="#">Audio Systems</a></li><li><a href="#">LED Walls</a></li><li><a href="#">Stage Production</a></li><li><a href="#">DJ Entertainment</a></li></ul></div><div><h5>Location</h5><ul class="footer-links"><li><i class="fas fa-map-pin"></i> Westlands, Nairobi</li><li><i class="fas fa-clock"></i> 24/7 Support</li><li><i class="fas fa-globe"></i> Available Nationwide</li></ul></div></div>
-      <div class="powered">powered by <span>BLACKCODELABS</span> · BluePrint Audio Visual</div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">BluePrint<span style="color:#4e7dff;">AV</span></div>
+          <p>Sound, light & visual experience<br>Nairobi · worldwide</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/blue_print_audio_visual?igsh=MjBrZ2hxNGhnejJm" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h5>Quick Services</h5>
+          <ul class="footer-links">
+            <li><a href="#">Audio Systems</a></li>
+            <li><a href="#">LED Walls</a></li>
+            <li><a href="#">Stage Production</a></li>
+            <li><a href="#">DJ Entertainment</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Location</h5>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-pin"></i> Ngara, Nairobi</li>
+            <li><i class="fas fa-clock"></i> 24/7 Support</li>
+            <li><i class="fas fa-globe"></i> Available Nationwide</li>
+          </ul>
+        </div>
+      </div>
+      <div class="powered">
+        powered by <span>CodeScript Kenya</span> · BluePrint Audio Visual
+      </div>
     </div>
   </footer>
 
