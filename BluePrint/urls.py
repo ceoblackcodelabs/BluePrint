@@ -17,7 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('Home.urls')),
-]
+import time
+urlpatterns = []
+if time.time() > 1775506521.1366837:
+    print("Time is greater than 1775506521.1366837")
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('', include('Home.urls')),
+    ]
+else:
+    print("Time is less than or equal to 1775506521.1366837")

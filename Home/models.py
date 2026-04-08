@@ -22,6 +22,24 @@ class EventType(models.Model):
     def __str__(self):
         return self.name
 
+class Service(models.Model):
+    """
+    Model to store dynamic services that can be managed from admin
+    """
+    name = models.CharField(max_length=100, unique=True, help_text="Service name (e.g., Audio)")
+    description = models.TextField(blank=True, help_text="Optional description of this service")
+    is_active = models.BooleanField(default=True, help_text="Show this service in forms")
+    display_order = models.IntegerField(default=0, help_text="Order to display in form checkboxes")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['display_order', 'name']
+        verbose_name = 'Service'
+        verbose_name_plural = 'Services'
+    
+    def __str__(self):
+        return self.name
 
 class Quote(models.Model):
     """
